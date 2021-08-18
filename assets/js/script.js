@@ -147,7 +147,8 @@ function startQuiz2() {
   function theCorrectAnswer() {
     if (document.getElementById("correctAnswer").clicked = true) {
       score++;
-      timerLeft = timerLeft + 2;
+      timerLeft += 5;
+      timer.textContent = timerLeft + " seconds remaining";
       console.log("hello");
       nextQuestion();
     };
@@ -156,7 +157,8 @@ function startQuiz2() {
   function theWrongAnswer() {
     if (document.getElementById("wrongAnswer").clicked = true) {
       score--;
-      timerLeft = timerLeft - 2;
+      timerLeft -= 5;
+      timer.textContent = timerLeft + " seconds remaining";
       console.log("fudge");
       nextQuestion();
     };
@@ -172,7 +174,7 @@ function startQuiz2() {
 };
 
 function startQuiz3() {
-  quizMaster.textContent = ("What is belt size?");
+  quizMaster.textContent = ("What is >= in JS?");
   var answer1 = document.createElement('button');
   var answer2 = document.createElement('button');
   var answer3 = document.createElement('button');
@@ -183,10 +185,10 @@ function startQuiz3() {
   answer3.setAttribute('id', 'wrongAnswer');
   answer4.setAttribute('id', 'correctAnswer');
 
-  answer1.textContent = ("red");
-  answer2.textContent = ("blue");
-  answer3.textContent = ("pug");
-  answer4.textContent = ("wild");
+  answer1.textContent = ("Less than or equal");
+  answer2.textContent = ("Greater than");
+  answer3.textContent = ("Gator Mouth ");
+  answer4.textContent = ("Greater than or equal");
 
   body.appendChild(quizMaster);
   body.appendChild(answer1);
@@ -202,7 +204,8 @@ function startQuiz3() {
   function theCorrectAnswer() {
     if (document.getElementById("correctAnswer").clicked = true) {
       score++;
-      timerLeft = timerLeft + 2;
+      timerLeft += 5;
+      timer.textContent = timerLeft + " seconds remaining";
       console.log("hello");
       nextQuestion();
     };
@@ -210,9 +213,10 @@ function startQuiz3() {
 
   function theWrongAnswer() {
     if (document.getElementById("wrongAnswer").clicked = true) {
-      console.log("fudge");
       score--;
-      timerLeft = timerLeft - 2;
+      timerLeft -= 5;
+      timer.textContent = timerLeft + " seconds remaining";
+      console.log("fudge");
       nextQuestion();
     };
   };
@@ -227,7 +231,7 @@ function startQuiz3() {
 };
 
 function startQuiz4() {
-  quizMaster.textContent = ("What is belt size?");
+  quizMaster.textContent = ("How many Data Types exist in JS?");
   var answer1 = document.createElement('button');
   var answer2 = document.createElement('button');
   var answer3 = document.createElement('button');
@@ -238,10 +242,10 @@ function startQuiz4() {
   answer3.setAttribute('id', 'wrongAnswer');
   answer4.setAttribute('id', 'wrongAnswer');
 
-  answer1.textContent = ("red");
-  answer2.textContent = ("blue");
-  answer3.textContent = ("pug");
-  answer4.textContent = ("wild");
+  answer1.textContent = ("9");
+  answer2.textContent = ("2");
+  answer3.textContent = ("4");
+  answer4.textContent = ("Over 9000!");
 
   body.appendChild(quizMaster);
   body.appendChild(answer1);
@@ -256,18 +260,20 @@ function startQuiz4() {
 
   function theCorrectAnswer() {
     if (document.getElementById("correctAnswer").clicked = true) {
-      console.log("hello");
       score++;
-      timerLeft = timerLeft + 2;
+      timerLeft += 5;
+      timer.textContent = timerLeft + " seconds remaining";
+      console.log("hello");
       nextQuestion();
     };
   };
 
   function theWrongAnswer() {
     if (document.getElementById("wrongAnswer").clicked = true) {
-      console.log("fudge");
       score--;
-      timerLeft = timerLeft - 2;
+      timerLeft -= 5;
+      timer.textContent = timerLeft + " seconds remaining";
+      console.log("fudge");
       nextQuestion();
     };
   };
@@ -282,7 +288,7 @@ function startQuiz4() {
 };
 
 function startQuiz5() {
-  quizMaster.textContent = ("What is belt size?");
+  quizMaster.textContent = ("What is break; used for in JS?");
   var answer1 = document.createElement('button');
   var answer2 = document.createElement('button');
   var answer3 = document.createElement('button');
@@ -293,10 +299,10 @@ function startQuiz5() {
   answer3.setAttribute('id', 'correctAnswer');
   answer4.setAttribute('id', 'wrongAnswer');
 
-  answer1.textContent = ("red");
-  answer2.textContent = ("blue");
-  answer3.textContent = ("pug");
-  answer4.textContent = ("wild");
+  answer1.textContent = ("Allows us to break our code into smaller code.");
+  answer2.textContent = ("Break the habit tonight!");
+  answer3.textContent = ("Allows us to exit a current loop");
+  answer4.textContent = ("Equivalent to alt + F4 on Windows");
 
   body.appendChild(quizMaster);
   body.appendChild(answer1);
@@ -311,18 +317,20 @@ function startQuiz5() {
 
   function theCorrectAnswer() {
     if (document.getElementById("correctAnswer").clicked = true) {
-      console.log("hello");
       score++;
-      timerLeft = timerLeft + 2;
+      timerLeft += 5;
+      timer.textContent = timerLeft + " seconds remaining";
+      console.log("hello");
       nextQuestion();
     };
   };
 
   function theWrongAnswer() {
     if (document.getElementById("wrongAnswer").clicked = true) {
-      console.log("fudge");
       score--;
-      timerLeft = timerLeft - 2;
+      timerLeft -= 5;
+      timer.textContent = timerLeft + " seconds remaining";
+      console.log("fudge");
       nextQuestion();
     };
   };
