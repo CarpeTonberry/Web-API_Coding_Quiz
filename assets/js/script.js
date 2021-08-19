@@ -4,8 +4,6 @@ var timerLeft = 60;
 var score = 0;
 var clicked = false
 
-//Link JS to HTML Body
-// document.getElementById('')
 
 // We access the <body> element by using `document.body`
 var body = document.body;
@@ -340,9 +338,16 @@ function startQuiz5() {
     answer2.remove();
     answer3.remove();
     answer4.remove();
-    // endOfQuiz();
+    endOfQuiz();
   }
 };
 
-// function endOfQuiz() {
-// }
+function endOfQuiz() {
+  clearInterval(countdown);
+  // save the score and the timer to local storage
+  localStorage.setItem('Time Left', timer.textContent);
+  localStorage.setItem('Score', score);
+  // redirect them to the highscore page
+  location.href = 'leaderboard.html';
+  // alert them that the game is over and show them there score  
+}
