@@ -1,14 +1,17 @@
+var attemptNumber = "0";
+var score = 0;
+
 var timer = document.getElementById("time");
 var timerLeft = 60;
-
-var score = 0;
 var clicked = false
 
+var allScores = [];
+var getLocalScores = localStorage.getItem('Local Scores');
 
 // We access the <body> element by using `document.body`
 var body = document.body;
 
-// Add a list of your favorite foods (or other favorites)
+
 var quizMaster = document.createElement('div');
 var testTaker = document.createElement('section');
 var startBtn = document.createElement('button');
@@ -27,13 +30,20 @@ testTaker.appendChild(startBtn);
 
 startBtn.addEventListener('click', letsPlay);
 
+function preSetUp() {
+  if (localStorage.getItem('Local Scores') === null) {
+    localStorage.setItem('Local Scores', "Are you ready for it?")
+  }
+  else {
+    allScores = allScores.concat(getLocalScores);
+  }
+}
+
 function letsPlay() {
+  preSetUp();
   startQuiz1();
   countdown();
-};
-
-// timer function start
-
+}
 
 function countdown() {
   var timerInterval = setInterval(function () {
@@ -53,8 +63,7 @@ function countdown() {
     }
     // Speed of timer
   }, 2000);
-};
-// Timer function end
+}
 
 function startQuiz1() {
   startBtn.remove();
@@ -112,7 +121,7 @@ function startQuiz1() {
     answer4.remove();
     startQuiz2();
   }
-};
+}
 
 function startQuiz2() {
   quizMaster.textContent = ("What is || in JS?");
@@ -169,7 +178,7 @@ function startQuiz2() {
     answer4.remove();
     startQuiz3();
   };
-};
+}
 
 function startQuiz3() {
   quizMaster.textContent = ("What is >= in JS?");
@@ -226,7 +235,7 @@ function startQuiz3() {
     answer4.remove();
     startQuiz4();
   }
-};
+}
 
 function startQuiz4() {
   quizMaster.textContent = ("How many Data Types exist in JS?");
@@ -283,7 +292,7 @@ function startQuiz4() {
     answer4.remove();
     startQuiz5();
   };
-};
+}
 
 function startQuiz5() {
   quizMaster.textContent = ("What is break; used for in JS?");
@@ -340,14 +349,28 @@ function startQuiz5() {
     answer4.remove();
     endOfQuiz();
   }
-};
+}
+
+function anotherOne() {
+  for (i = 0; i <= arguments.length / 3; i++) {
+    attemptNumber++;
+  };
+}
+
+function tallyResults() {
+  var finalScores = {
+    Attempt: attemptNumber,
+    Score: score,
+    Time: timer.textContent,
+  };
+
+  allScores.push(finalScores);
+}
 
 function endOfQuiz() {
   clearInterval(countdown);
-  // save the score and the timer to local storage
-  localStorage.setItem('Time Left', timer.textContent);
-  localStorage.setItem('Score', score);
-  // redirect them to the highscore page
+  anotherOne();
+  tallyResults();
+  localStorage.setItem('Local Scores', JSON.stringify(allScores));
   location.href = 'leaderboard.html';
-  // alert them that the game is over and show them there score  
 }
