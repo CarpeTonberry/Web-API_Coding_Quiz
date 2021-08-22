@@ -3,7 +3,8 @@
 The goal of this project was to create a quiz that saves the users score to the browsers local storage. 
 
 Here's a link the the application: [link](https://carpetonberry.github.io/Web-API_Coding_Quiz/)
-Here's a a link to the github repository: [link}](https://github.com/CarpeTonberry/Web-API_Coding_Quiz)
+
+Here's a a link to the github repository: [link](https://github.com/CarpeTonberry/Web-API_Coding_Quiz)
 
 ## Layout of Application 
 
