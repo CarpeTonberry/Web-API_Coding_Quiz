@@ -1,0 +1,38 @@
+body {
+    margin: 0 auto;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.theStart button {
+    background-color: blueviolet;
+    color: coral;
+}
+
+.theAnswer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+    background-color: blueviolet;
+    color: coral; 
+}
+
+.theAnswer:hover {
+    color: red;
+    background-color: salmon;
+} 
+
+.Leaderboard {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+}
+
+.Timer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 25px;
+}

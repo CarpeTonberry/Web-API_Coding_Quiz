@@ -1,77 +1,81 @@
-var attemptNumber = "0";
-var score = 0;
+var attemptNumber = "0"
+var score = 0
 
+// Timer variables
 var timer = document.getElementById("time");
 var timerLeft = 60;
 var clicked = false
 
+// Save data variables
 var allScores = [];
 var getLocalScores = localStorage.getItem('Local Scores');
 
-// We access the <body> element by using `document.body`
+// Modify the HTML <body> element by using `document.body`
 var body = document.body;
 
 
 var quizMaster = document.createElement('div');
+quizMaster.className = "theStart"
 var testTaker = document.createElement('section');
 var startBtn = document.createElement('button');
 
 quizMaster.textContent = 'Are you ready for it?';
 startBtn.textContent = 'Start';
 
-// Adjust Sizing/Placement 
+// Adjust sizing/placement of created DOM elements  
 quizMaster.setAttribute('style', 'font-size:20px; text-align:center;');
-testTaker.setAttribute('style', 'background: #888888; padding:20px; text-align:center;');
+testTaker.setAttribute('style', 'padding:20px; text-align:center;');
 
-// Append to the body
+// Append created elements to the <body>
 body.appendChild(quizMaster);
 quizMaster.appendChild(testTaker);
 testTaker.appendChild(startBtn);
 
 startBtn.addEventListener('click', letsPlay);
 
-function preSetUp() {
-  if (localStorage.getItem('Local Scores') === null) {
-    localStorage.setItem('Local Scores', "Are you ready for it?")
-  }
-  else {
-    allScores = allScores.concat(getLocalScores);
-  }
-}
-
 function letsPlay() {
-  preSetUp();
+  // preSetUp();
   startQuiz1();
   countdown();
 }
+
+// function preSetUp() {
+//   if (localStorage.getItem('Local Scores') === null) {
+//     localStorage.setItem('Local Scores', "Are you ready for it?")
+//   }
+//   else {
+//     allScores = allScores.concat(getLocalScores);
+//   }
+// }
 
 function countdown() {
   var timerInterval = setInterval(function () {
     if (timerLeft > 1) {
       timer.textContent = timerLeft + " seconds remaining";
-      // Decrease 'timerLeft' by one second
       timerLeft--;
     } else if (timerLeft === 1) {
-      // When 'timerLeft' is equl to 1, rename to 'second' instead of 'seconds' 
       timer.textContent = timerLeft + " second remaining";
       timerLeft--;
     } else {
-      // When 'timerLeft' gets to 0, set 'timer' to an empty string
       timer.textContent = "";
-      // Stop Timer
+      // Stop the timer
       clearInterval(timerInterval);
     }
     // Speed of timer
-  }, 2000);
+  }, 930);
 }
 
 function startQuiz1() {
   startBtn.remove();
   quizMaster.textContent = ("What is a callback?");
   var answer1 = document.createElement('button');
+  answer1.className = "theAnswer"
   var answer2 = document.createElement('button');
+  answer2.className = "theAnswer"
   var answer3 = document.createElement('button');
+  answer3.className = "theAnswer"
   var answer4 = document.createElement('button');
+  answer4.className = "theAnswer"
 
   answer1.setAttribute('id', 'wrongAnswer');
   answer2.setAttribute('id', 'correctAnswer');
@@ -94,6 +98,7 @@ function startQuiz1() {
   answer3.addEventListener('click', theWrongAnswer);
   answer4.addEventListener('click', theWrongAnswer);
 
+  // Check if correct or wrong answer was selected and move to the next question
   function theCorrectAnswer() {
     if (document.getElementById("correctAnswer").clicked = true) {
       score++;
@@ -126,9 +131,13 @@ function startQuiz1() {
 function startQuiz2() {
   quizMaster.textContent = ("What is || in JS?");
   var answer1 = document.createElement('button');
+  answer1.className = "theAnswer"
   var answer2 = document.createElement('button');
+  answer2.className = "theAnswer"
   var answer3 = document.createElement('button');
+  answer3.className = "theAnswer"
   var answer4 = document.createElement('button');
+  answer4.className = "theAnswer"
 
   answer1.setAttribute('id', 'wrongAnswer');
   answer2.setAttribute('id', 'wrongAnswer');
@@ -151,6 +160,7 @@ function startQuiz2() {
   answer3.addEventListener('click', theCorrectAnswer);
   answer4.addEventListener('click', theWrongAnswer);
 
+  // Check if correct or wrong answer was selected and move to the next question
   function theCorrectAnswer() {
     if (document.getElementById("correctAnswer").clicked = true) {
       score++;
@@ -183,9 +193,13 @@ function startQuiz2() {
 function startQuiz3() {
   quizMaster.textContent = ("What is >= in JS?");
   var answer1 = document.createElement('button');
+  answer1.className = "theAnswer"
   var answer2 = document.createElement('button');
+  answer2.className = "theAnswer"
   var answer3 = document.createElement('button');
+  answer3.className = "theAnswer"
   var answer4 = document.createElement('button');
+  answer4.className = "theAnswer"
 
   answer1.setAttribute('id', 'wrongAnswer');
   answer2.setAttribute('id', 'wrongAnswer');
@@ -208,6 +222,7 @@ function startQuiz3() {
   answer3.addEventListener('click', theWrongAnswer);
   answer4.addEventListener('click', theCorrectAnswer);
 
+  // Check if correct or wrong answer was selected and move to the next question
   function theCorrectAnswer() {
     if (document.getElementById("correctAnswer").clicked = true) {
       score++;
@@ -240,9 +255,13 @@ function startQuiz3() {
 function startQuiz4() {
   quizMaster.textContent = ("How many Data Types exist in JS?");
   var answer1 = document.createElement('button');
+  answer1.className = "theAnswer"
   var answer2 = document.createElement('button');
+  answer2.className = "theAnswer"
   var answer3 = document.createElement('button');
+  answer3.className = "theAnswer"
   var answer4 = document.createElement('button');
+  answer4.className = "theAnswer"
 
   answer1.setAttribute('id', 'correctAnswer');
   answer2.setAttribute('id', 'wrongAnswer');
@@ -265,6 +284,7 @@ function startQuiz4() {
   answer3.addEventListener('click', theWrongAnswer);
   answer4.addEventListener('click', theWrongAnswer);
 
+  // Check if correct or wrong answer was selected and move to the next question
   function theCorrectAnswer() {
     if (document.getElementById("correctAnswer").clicked = true) {
       score++;
@@ -297,9 +317,13 @@ function startQuiz4() {
 function startQuiz5() {
   quizMaster.textContent = ("What is break; used for in JS?");
   var answer1 = document.createElement('button');
+  answer1.className = "theAnswer"
   var answer2 = document.createElement('button');
+  answer2.className = "theAnswer"
   var answer3 = document.createElement('button');
+  answer3.className = "theAnswer"
   var answer4 = document.createElement('button');
+  answer4.className = "theAnswer"
 
   answer1.setAttribute('id', 'wrongAnswer');
   answer2.setAttribute('id', 'wrongAnswer');
@@ -322,6 +346,7 @@ function startQuiz5() {
   answer3.addEventListener('click', theCorrectAnswer);
   answer4.addEventListener('click', theWrongAnswer);
 
+  // Check if correct or wrong answer was selected and move to the next question
   function theCorrectAnswer() {
     if (document.getElementById("correctAnswer").clicked = true) {
       score++;
@@ -350,27 +375,51 @@ function startQuiz5() {
     endOfQuiz();
   }
 }
-
-function anotherOne() {
-  for (i = 0; i <= arguments.length / 3; i++) {
-    attemptNumber++;
-  };
-}
-
-function tallyResults() {
-  var finalScores = {
-    Attempt: attemptNumber,
-    Score: score,
-    Time: timer.textContent,
-  };
-
-  allScores.push(finalScores);
-}
-
 function endOfQuiz() {
+  // Stop time
   clearInterval(countdown);
-  anotherOne();
-  tallyResults();
-  localStorage.setItem('Local Scores', JSON.stringify(allScores));
+  // Collect Player Name
+  var playerName = whatIsYourName();
+
+  function whatIsYourName() {
+    var playerName = "";
+
+    while (playerName === "" || playerName === null) {
+      playerName = prompt("What are your initials?");
+    }
+    return playerName;
+  }
+
+  // Increment the var attemptNumber
+  // anotherOne();
+  // Input results of the quiz into an object
+  // tallyResults();
+
+  // Set array into local storage (JSON takes strings and arrays)
+  // localStorage.setItem('Local Scores', JSON.stringify(allScores));
+
+  // Set last score results in local storage
+  localStorage.setItem('Last Player', (playerName));
+  localStorage.setItem('Last Score', (score));
+  localStorage.setItem('Last Time', (timer.textContent));
+  // Redirect to the leaderboard
   location.href = 'leaderboard.html';
 }
+
+// function anotherOne() {
+//   for (i = 0; i <= arguments.length / 3; i++) {
+//     attemptNumber++;
+//   };
+// }
+
+// function tallyResults() {
+//   var finalScores = {
+//     Player: playerName,
+//     Attempt: attemptNumber,
+//     Score: score,
+//     Time: timer.textContent,
+//   }
+
+//   //  tallyResults object is pushed into an array which we can save 
+//   allScores.push(finalScores);
+// }
